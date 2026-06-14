@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "id": "kopia",
+  "repo": "kopia-stack-module",
+  "runtimeId": "kopia",
+  "lifecycle": "active",
+  "dependencies": [
+    "stack-foundation"
+  ],
+  "overlays": [
+    "stack.compose/kopia.yml",
+    "stack.config/kopia"
+  ]
+}
