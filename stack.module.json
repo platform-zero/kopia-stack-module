@@ -18,7 +18,8 @@
   "overlays": [
     "stack.compose/kopia.yml",
     "stack.config/kopia",
-    "stack.containers/test-runner/playwright-tests/tests/deep/forward-auth/kopia.spec.ts"
+    "stack.containers/test-runner/playwright-tests/tests/deep/forward-auth/kopia.spec.ts",
+    "stack.kotlin/test-runner/src/main/kotlin/org/webservices/testrunner/suites/BackupTests.kt"
   ],
   "testAssets": []
 }
