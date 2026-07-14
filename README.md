@@ -6,7 +6,7 @@
 - Lifecycle: `active`
 
 ## Owned overlays
-- `stack.compose/kopia.yml`
+- `stack.runtime.yaml`
 - `stack.config/kopia`
 
 ## Dependencies
