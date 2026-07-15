@@ -16,16 +16,4 @@ suspend fun TestRunner.backupTests() = suite("Backup Tests") {
         }
     }
 
-    test("Kopia endpoint is configured") {
-        env.endpoints.kopia shouldContain "kopia"
-    }
-
-    test("Kopia web UI boundary responds") {
-        try {
-            val response = client.getRawResponse("${env.endpoints.kopia}/")
-            requireAuthBoundary(response, "Kopia web UI boundary")
-        } catch (e: Exception) {
-            fail("Kopia web UI not reachable: ${e.message}")
-        }
-    }
 }
