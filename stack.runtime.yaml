@@ -28,8 +28,10 @@ services:
     health:
       test:
       - "CMD-SHELL"
-      - "curl -fsS -u \"$${KOPIA_SERVER_USERNAME:-kopia}:$${KOPIA_SERVER_PASSWORD:-$${KOPIA_PASSWORD}}\"\
-        \ http://localhost:51515/ >/dev/null || exit 1"
+      - |
+        printf 'header = "Authorization: Basic %s"\n' \
+          "$$(printf '%s:%s' "$${KOPIA_SERVER_USERNAME:-kopia}" "$${KOPIA_SERVER_PASSWORD:-$${KOPIA_PASSWORD}}" | base64 -w0)" \
+          | curl -fsS --config - http://localhost:51515/ >/dev/null
       interval: "60s"
       timeout: "10s"
       retries: 3
